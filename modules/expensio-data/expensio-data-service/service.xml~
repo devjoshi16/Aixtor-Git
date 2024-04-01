@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.expensio.data">
+	<namespace>expensio</namespace>
+	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" remote-service="false" session-factory="sampleSessionFactory" table="foo" tx-manager="sampleTransactionManager uuid="true"">-->
+	<entity local-service="true" name="login_logs" remote-service="true" uuid="true">
+
+		<!-- PK fields -->
+
+		<column name="loginLogId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		
+		<column name="userName" type="String" />
+		<column name="email" type="String" />
+		<column name="ipAddress" type="String" />
+		<column name="uri" type="String" />
+		<column name="host" type="String" />
+		<column name="loginDateTime" type="Date" />
+
+
+		<order by="asc">
+			<order-column name="loginLogId" />
+		</order>
+
+	</entity>
+</service-builder>

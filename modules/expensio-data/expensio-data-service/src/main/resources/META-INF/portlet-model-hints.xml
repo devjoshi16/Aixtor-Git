@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.expensio.data.model.login_logs">
+		<field name="uuid" type="String" />
+		<field name="loginLogId" type="long" />
+		<field name="userName" type="String" />
+		<field name="email" type="String" />
+		<field name="ipAddress" type="String" />
+		<field name="uri" type="String" />
+		<field name="host" type="String" />
+		<field name="loginDateTime" type="Date" />
+	</model>
+</model-hints>

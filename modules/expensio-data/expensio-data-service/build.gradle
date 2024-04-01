@@ -1,0 +1,11 @@
+dependencies {
+	api project(":modules:expensio-data:expensio-data-api")
+
+	compileOnly group: "com.liferay.portal", name: "release.dxp.api"
+}
+
+buildService {
+	apiDir = "../expensio-data-api/src/main/java"
+}
+
+group = "com.expensio.data"
