@@ -1,0 +1,4 @@
+Bundle-Name: expensio-budget-web
+Bundle-SymbolicName: com.expensio.budget
+Bundle-Version: 1.0.0
+Export-Package: com.expensio.budget.constants
