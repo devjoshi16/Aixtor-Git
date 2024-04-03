@@ -167,4 +167,66 @@
 		</order>
 
 	</entity>
+
+	<entity local-service="true" name="Departments" remote-service="true" uuid="true">
+
+		<!-- PK fields -->
+
+		<column name="departmentId" primary="true" type="long" />
+
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Group instance -->
+
+
+		<column name="departmentName" type="String" />
+
+
+		<order by="asc">
+			<order-column name="departmentId" />
+		</order>
+
+	</entity>
+
+
+
+	<entity local-service="true" name="Designations" remote-service="true" uuid="true">
+
+		<!-- PK fields -->
+
+		<column name="designationId" primary="true" type="long" />
+
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Group instance -->
+
+
+		<column name="designationName" type="String" />
+		<column name="departmentId" type="Long" />
+
+
+		<order by="asc">
+			<order-column name="designationId" />
+		</order>
+
+	</entity>
+
+
+
+
+
 </service-builder>
