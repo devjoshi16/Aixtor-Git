@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.expensio.common.data.model.Budgets">
+		<field name="uuid" type="String" />
+		<field name="budgetId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="budgetAmount" type="Long" />
+		<field name="budgetDuration" type="Date" />
+		<field name="budgetDescription" type="String" />
+		<field name="budgetDepartmentId" type="Long" />
+	</model>
+	<model name="com.expensio.common.data.model.Category">
+		<field name="uuid" type="String" />
+		<field name="categoryId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="categoryName" type="String" />
+	</model>
+	<model name="com.expensio.common.data.model.Employees">
+		<field name="uuid" type="String" />
+		<field name="employeeId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="employeeUserId" type="Long" />
+		<field name="department" type="String" />
+		<field name="designation" type="String" />
+		<field name="status" type="Boolean" />
+	</model>
+	<model name="com.expensio.common.data.model.Expenses">
+		<field name="uuid" type="String" />
+		<field name="expenseId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="expenseAmount" type="Long" />
+		<field name="categoryId" type="Long" />
+		<field name="subCategoryId" type="Long" />
+		<field name="employeeUserId" type="Long" />
+		<field name="docMedia" type="String" />
+	</model>
+	<model name="com.expensio.common.data.model.Loginlogs">
+		<field name="uuid" type="String" />
+		<field name="loginLogId" type="long" />
+		<field name="userName" type="String" />
+		<field name="email" type="String" />
+		<field name="ipAddress" type="String" />
+		<field name="uri" type="String" />
+		<field name="host" type="String" />
+		<field name="loginDateTime" type="Date" />
+	</model>
+	<model name="com.expensio.common.data.model.SubCategory">
+		<field name="uuid" type="String" />
+		<field name="subCategoryId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="subCategoryName" type="String" />
+		<field name="categoryId" type="Long" />
+	</model>
+</model-hints>

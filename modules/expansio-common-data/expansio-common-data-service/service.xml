@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.expensio.common.data">
+	<namespace>expensio</namespace>
+	<entity local-service="true" name="Loginlogs" remote-service="true" uuid="true">
+
+		<!-- PK fields -->
+
+		<column name="loginLogId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+
+		<column name="userName" type="String" />
+		<column name="email" type="String" />
+		<column name="ipAddress" type="String" />
+		<column name="uri" type="String" />
+		<column name="host" type="String" />
+		<column name="loginDateTime" type="Date" />
+
+
+		<order by="asc">
+			<order-column name="loginLogId" />
+		</order>
+
+	</entity>
+
+	<entity local-service="true" name="Employees" remote-service="true" uuid="true">
+
+		<!-- PK fields -->
+
+		<column name="employeeId" primary="true" type="long" />
+
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Group instance -->
+
+
+		<column name="employeeUserId" type="Long" />
+		<column name="department" type="String" />
+		<column name="designation" type="String" />
+		<column name="status" type="Boolean" />
+
+
+		<order by="asc">
+			<order-column name="employeeId" />
+		</order>
+
+	</entity>
+
+	<entity local-service="true" name="Category" remote-service="true" uuid="true">
+
+		<!-- PK fields -->
+
+		<column name="categoryId" primary="true" type="long" />
+
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Group instance -->
+
+		<column name="categoryName" type="String" />
+
+
+		<order by="asc">
+			<order-column name="categoryId" />
+		</order>
+
+	</entity>
+
+	<entity local-service="true" name="SubCategory" remote-service="true" uuid="true">
+
+		<!-- PK fields -->
+
+		<column name="subCategoryId" primary="true" type="long" />
+
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Group instance -->
+
+		<column name="subCategoryName" type="String" />
+		<column name="categoryId" type="Long" />
+
+
+		<order by="asc">
+			<order-column name="subCategoryId" />
+		</order>
+
+	</entity>
+
+	<entity local-service="true" name="Expenses" remote-service="true" uuid="true">
+
+		<!-- PK fields -->
+
+		<column name="expenseId" primary="true" type="long" />
+
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Group instance -->
+
+		<column name="expenseAmount" type="Long" />
+		<column name="categoryId" type="Long" />
+		<column name="subCategoryId" type="Long" />
+		<column name="employeeUserId" type="Long" />
+		<column name="docMedia" type="String" />
+
+
+		<order by="asc">
+			<order-column name="expenseId" />
+		</order>
+
+	</entity>
+
+	<entity local-service="true" name="Budgets" remote-service="true" uuid="true">
+
+		<!-- PK fields -->
+
+		<column name="budgetId" primary="true" type="long" />
+
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Group instance -->
+
+		<column name="budgetAmount" type="Long" />
+		<column name="budgetDuration" type="Date" />
+		<column name="budgetDescription" type="String" />
+		<column name="budgetDepartmentId" type="Long" />
+
+
+		<order by="asc">
+			<order-column name="budgetId" />
+		</order>
+
+	</entity>
+</service-builder>
