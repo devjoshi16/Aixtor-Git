@@ -1,0 +1,4 @@
+Bundle-Name: expensio-designation-web
+Bundle-SymbolicName: com.expensio.designation
+Bundle-Version: 1.0.0
+Export-Package: com.expensio.designation.constants
