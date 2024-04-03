@@ -1,0 +1,10 @@
+Bundle-Name: expansio-common-data-api
+Bundle-SymbolicName: com.expensio.common.data.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.expensio.common.data.exception,\
+	com.expensio.common.data.model,\
+	com.expensio.common.data.service,\
+	com.expensio.common.data.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../expansio-common-data-service/service.xml

@@ -1,1 +1,0 @@
-create index IX_CA8F095D on expensio_login_logs (uuid_[$COLUMN_LENGTH:75$]);
