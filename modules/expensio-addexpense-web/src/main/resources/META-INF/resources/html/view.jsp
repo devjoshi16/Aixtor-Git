@@ -23,7 +23,7 @@
 										<div class="form-group">
 											<label for="ExpenseId">Expense Name *</label> <input
 												id="ExpenseId" type="text" name="<portlet:namespace />ExpenseId"
-												class="form-control" placeholder="Please enter Expense ID *"
+												class="form-control" placeholder="Please enter Expense NAME *"
 												required="required" data-error="Expense ID is required.">
 										</div>
 									</div>
