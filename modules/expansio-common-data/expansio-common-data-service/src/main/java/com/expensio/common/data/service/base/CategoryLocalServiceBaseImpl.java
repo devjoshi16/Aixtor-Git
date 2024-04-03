@@ -10,6 +10,8 @@ import com.expensio.common.data.service.CategoryLocalService;
 import com.expensio.common.data.service.CategoryLocalServiceUtil;
 import com.expensio.common.data.service.persistence.BudgetsPersistence;
 import com.expensio.common.data.service.persistence.CategoryPersistence;
+import com.expensio.common.data.service.persistence.DepartmentsPersistence;
+import com.expensio.common.data.service.persistence.DesignationsPersistence;
 import com.expensio.common.data.service.persistence.EmployeesPersistence;
 import com.expensio.common.data.service.persistence.ExpensesPersistence;
 import com.expensio.common.data.service.persistence.LoginlogsPersistence;
@@ -544,6 +546,12 @@ public abstract class CategoryLocalServiceBaseImpl
 
 	@Reference
 	protected CategoryPersistence categoryPersistence;
+
+	@Reference
+	protected DepartmentsPersistence departmentsPersistence;
+
+	@Reference
+	protected DesignationsPersistence designationsPersistence;
 
 	@Reference
 	protected EmployeesPersistence employeesPersistence;

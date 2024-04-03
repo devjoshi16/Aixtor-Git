@@ -23,6 +23,29 @@ create table expensio_Category (
 	categoryName VARCHAR(75) null
 );
 
+create table expensio_Departments (
+	uuid_ VARCHAR(75) null,
+	departmentId LONG not null primary key,
+	companyId LONG,
+	userId LONG,
+	userName VARCHAR(75) null,
+	createDate DATE null,
+	modifiedDate DATE null,
+	departmentName VARCHAR(75) null
+);
+
+create table expensio_Designations (
+	uuid_ VARCHAR(75) null,
+	designationId LONG not null primary key,
+	companyId LONG,
+	userId LONG,
+	userName VARCHAR(75) null,
+	createDate DATE null,
+	modifiedDate DATE null,
+	designationName VARCHAR(75) null,
+	departmentId LONG
+);
+
 create table expensio_Employees (
 	uuid_ VARCHAR(75) null,
 	employeeId LONG not null primary key,
