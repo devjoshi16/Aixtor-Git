@@ -1,5 +1,8 @@
 dependencies {
+	compileOnly project(":modules:expansio-common-data:expansio-common-data-api")
+
 	compileOnly group: "com.liferay.portal", name: "release.dxp.api"
 
 	cssBuilder group: "com.liferay", name: "com.liferay.css.builder", version: "3.1.4"
+
 }
