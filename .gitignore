@@ -25,4 +25,4 @@
 /plugins-sdk/dist
 /plugins-sdk/lib
 test-results
-gradle.properties
+/gradle.properties
