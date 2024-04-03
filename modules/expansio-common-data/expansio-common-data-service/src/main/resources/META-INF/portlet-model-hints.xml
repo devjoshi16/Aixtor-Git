@@ -24,6 +24,27 @@
 		<field name="modifiedDate" type="Date" />
 		<field name="categoryName" type="String" />
 	</model>
+	<model name="com.expensio.common.data.model.Departments">
+		<field name="uuid" type="String" />
+		<field name="departmentId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="departmentName" type="String" />
+	</model>
+	<model name="com.expensio.common.data.model.Designations">
+		<field name="uuid" type="String" />
+		<field name="designationId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="designationName" type="String" />
+		<field name="departmentId" type="Long" />
+	</model>
 	<model name="com.expensio.common.data.model.Employees">
 		<field name="uuid" type="String" />
 		<field name="employeeId" type="long" />
