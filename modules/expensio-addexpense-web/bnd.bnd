@@ -1,0 +1,4 @@
+Bundle-Name: expensio-addexpense-web
+Bundle-SymbolicName: com.expensio.addexpense.web
+Bundle-Version: 1.0.0
+Export-Package: com.expensio.addexpense.web.constants

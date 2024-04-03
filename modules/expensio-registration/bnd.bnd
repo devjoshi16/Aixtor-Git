@@ -1,0 +1,4 @@
+Bundle-Name: expensio-registration
+Bundle-SymbolicName: com.expensio.module.registration
+Bundle-Version: 1.0.0
+Export-Package: com.expensio.module.registration.constants
