@@ -12,56 +12,90 @@ Expensio is a company-level expense management portal.
 
 ## Tables:
 
-### 1. Employees
+# Entity Definitions from service.xml
 
-| Field       | Description          |
-| ----------- | -------------------- |
-| employeeId  | Employee ID          |
-| audit       | Audit (themeDisplay) |
-| userId      | User ID              |
-| department  | Department           |
-| designation | Designation          |
-| status      | Status               |
+## login_logs Entity
 
-### 2. Category
+| Column Name    | Type   | Primary Key | Description                 |
+|----------------|--------|-------------|-----------------------------|
+| loginLogId     | long   | true        | Unique identifier for login logs. |
+| userName       | String |             | Username of the user.       |
+| email          | String |             | Email address of the user.  |
+| ipAddress      | String |             | IP address of the user.     |
+| uri            | String |             | URI accessed during login.  |
+| host           | String |             | Hostname of the user's system. |
+| loginDateTime  | Date   |             | Date and time of the login event. |
 
-| Field        | Description   |
-| ------------ | ------------- |
-| categoryId   | Category ID   |
-| audit        | Audit         |
-| categoryName | Category Name |
-| createDate   | Create Date   |
+## Employees Entity
 
-### 3. Subcategory
+| Column Name     | Type    | Primary Key | Description                 |
+|-----------------|---------|-------------|-----------------------------|
+| employeeId      | long    | true        | Unique identifier for employees. |
+| companyId       | long    |             | ID of the company.          |
+| userId          | long    |             | ID of the user.             |
+| userName        | String  |             | Username of the employee.   |
+| createDate      | Date    |             | Date of employee creation.  |
+| modifiedDate    | Date    |             | Date of last modification.  |
+| employeeUserId  | Long    |             | User ID of the employee.    |
+| department      | String  |             | Department of the employee. |
+| designation     | String  |             | Designation of the employee.|
+| status          | Boolean |             | Status of the employee.     |
 
-| Field           | Description      |
-| --------------- | ---------------- |
-| subCategoryId   | Subcategory ID   |
-| audit           | Audit            |
-| subCategoryName | Subcategory Name |
-| createDate      | Create Date      |
+## Category Entity
 
-### 4. Expense
+| Column Name   | Type   | Primary Key | Description                 |
+|---------------|--------|-------------|-----------------------------|
+| categoryId    | long   | true        | Unique identifier for categories. |
+| companyId     | long   |             | ID of the company.          |
+| userId        | long   |             | ID of the user.             |
+| userName      | String |             | Username of the user.       |
+| createDate    | Date   |             | Date of category creation.  |
+| modifiedDate  | Date   |             | Date of last modification.  |
+| categoryName  | String |             | Name of the category.       |
 
-| Field         | Description              |
-| ------------- | ------------------------ |
-| expenseId     | Expense ID               |
-| expenseAmount | Expense Amount           |
-| categoryId    | Category ID              |
-| subCategoryId | Subcategory ID           |
-| date          | Date                     |
-| userId        | User ID                  |
-| link          | Link (GDrive / DocMedia) |
+## SubCategory Entity
 
-### 5. Budgeting
+| Column Name      | Type   | Primary Key | Description                 |
+|------------------|--------|-------------|-----------------------------|
+| subCategoryId    | long   | true        | Unique identifier for subcategories. |
+| companyId        | long   |             | ID of the company.          |
+| userId           | long   |             | ID of the user.             |
+| userName         | String |             | Username of the user.       |
+| createDate       | Date   |             | Date of subcategory creation. |
+| modifiedDate     | Date   |             | Date of last modification. |
+| subCategoryName  | String |             | Name of the subcategory.   |
+| categoryId       | Long   |             | ID of the associated category. |
 
-| Field             | Description        |
-| ----------------- | ------------------ |
-| budgetId          | Budget ID          |
-| budgetAmount      | Budget Amount      |
-| budgetDuration    | Budget Duration    |
-| budgetDescription | Budget Description |
-| budgetDepartment  | Budget Department  |
+## Expenses Entity
+
+| Column Name     | Type   | Primary Key | Description                 |
+|-----------------|--------|-------------|-----------------------------|
+| expenseId       | long   | true        | Unique identifier for expenses. |
+| companyId       | long   |             | ID of the company.          |
+| userId          | long   |             | ID of the user.             |
+| userName        | String |             | Username of the user.       |
+| createDate      | Date   |             | Date of expense creation.   |
+| modifiedDate    | Date   |             | Date of last modification. |
+| expenseAmount   | Long   |             | Amount of the expense.      |
+| categoryId      | Long   |             | ID of the associated category. |
+| subCategoryId   | Long   |             | ID of the associated subcategory. |
+| employeeUserId  | Long   |             | User ID of the employee.    |
+| DocMedia        | String |             | Media attached to the expense. |
+
+## Budgets Entity
+
+| Column Name        | Type   | Primary Key | Description                 |
+|--------------------|--------|-------------|-----------------------------|
+| budgetId           | long   | true        | Unique identifier for budgets. |
+| companyId          | long   |             | ID of the company.          |
+| userId             | long   |             | ID of the user.             |
+| userName           | String |             | Username of the user.       |
+| createDate         | Date   |             | Date of budget creation.    |
+| modifiedDate       | Date   |             | Date of last modification.  |
+| budgetAmount       | Long   |             | Amount of the budget.       |
+| budgetDuration     | Date   |             | Duration of the budget.     |
+| budgetDescription  | Long   |             | Description of the budget.  |
+| budgetDepartment   | Long   |             | ID of the associated department. |
 
 ## Liferay Modules:
 
