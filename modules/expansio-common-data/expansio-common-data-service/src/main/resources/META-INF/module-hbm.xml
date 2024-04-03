@@ -4,6 +4,8 @@
 <hibernate-mapping auto-import="false" default-lazy="false">
 	<import class="com.expensio.common.data.model.Budgets" />
 	<import class="com.expensio.common.data.model.Category" />
+	<import class="com.expensio.common.data.model.Departments" />
+	<import class="com.expensio.common.data.model.Designations" />
 	<import class="com.expensio.common.data.model.Employees" />
 	<import class="com.expensio.common.data.model.Expenses" />
 	<import class="com.expensio.common.data.model.Loginlogs" />
@@ -34,6 +36,31 @@
 		<property access="com.liferay.portal.dao.orm.hibernate.MethodPropertyAccessor" name="createDate" type="org.hibernate.type.TimestampType" />
 		<property access="com.liferay.portal.dao.orm.hibernate.MethodPropertyAccessor" name="modifiedDate" type="org.hibernate.type.TimestampType" />
 		<property access="com.liferay.portal.dao.orm.hibernate.MethodPropertyAccessor" name="categoryName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.expensio.common.data.model.impl.DepartmentsImpl" table="expensio_Departments">
+		<id access="com.liferay.portal.dao.orm.hibernate.MethodPropertyAccessor" name="departmentId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property access="com.liferay.portal.dao.orm.hibernate.MethodPropertyAccessor" column="uuid_" name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.MethodPropertyAccessor" name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.MethodPropertyAccessor" name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.MethodPropertyAccessor" name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.MethodPropertyAccessor" name="createDate" type="org.hibernate.type.TimestampType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.MethodPropertyAccessor" name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.MethodPropertyAccessor" name="departmentName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.expensio.common.data.model.impl.DesignationsImpl" table="expensio_Designations">
+		<id access="com.liferay.portal.dao.orm.hibernate.MethodPropertyAccessor" name="designationId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property access="com.liferay.portal.dao.orm.hibernate.MethodPropertyAccessor" column="uuid_" name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.MethodPropertyAccessor" name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.MethodPropertyAccessor" name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.MethodPropertyAccessor" name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.MethodPropertyAccessor" name="createDate" type="org.hibernate.type.TimestampType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.MethodPropertyAccessor" name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.MethodPropertyAccessor" name="designationName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.MethodPropertyAccessor" name="departmentId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 	</class>
 	<class name="com.expensio.common.data.model.impl.EmployeesImpl" table="expensio_Employees">
 		<id access="com.liferay.portal.dao.orm.hibernate.MethodPropertyAccessor" name="employeeId" type="long">
