@@ -2,7 +2,9 @@ package com.expensio.addexpense.web.portlet;
 
 import com.expensio.addexpense.web.constants.ExpensioAddexpenseWebPortletKeys;
 import com.expensio.common.data.model.Category;
+import com.expensio.common.data.model.Employees;
 import com.expensio.common.data.service.CategoryLocalService;
+import com.expensio.common.data.service.EmployeesLocalService;
 import com.liferay.portal.kernel.model.User;
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
 import com.liferay.portal.kernel.service.UserLocalServiceUtil;
@@ -14,6 +16,7 @@ import javax.portlet.Portlet;
 import javax.portlet.PortletException;
 import javax.portlet.RenderRequest;
 import javax.portlet.RenderResponse;
+import javax.validation.constraints.Email;
 
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
@@ -41,6 +44,9 @@ public class ExpensioAddexpenseWebPortlet extends MVCPortlet {
 	@Reference
 	CategoryLocalService categoryLocalService;
 	
+	@Reference
+	EmployeesLocalService employeesLocalService;
+	
 	@Override
 	public void render(RenderRequest renderRequest, RenderResponse renderResponse)
 			throws IOException, PortletException {
@@ -53,6 +59,9 @@ public class ExpensioAddexpenseWebPortlet extends MVCPortlet {
 		System.out.println("users === >>>" + users);
 		renderRequest.setAttribute("userNameList", users);
 		
+		List<Employees> employeelist=employeesLocalService.getEmployeeses(-1, -1);
+		System.out.println("employeelist ==>>>" + employeelist);
+		renderRequest.setAttribute("employeeNameList", employeelist);
 		super.render(renderRequest, renderResponse);
 	}
 }

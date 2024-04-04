@@ -16,6 +16,7 @@
 					<div class="container">
 						<form action="${getExpenseDetails}" method="post" id="add-expense-form" role="form" onsubmit="return validateExpenseForm()">
 							<h2>Add Expense</h2>
+							<p>${employeeNameList}</p>
 							<div class="controls">
 								<div class=" text-center mt-3 ">
 										
