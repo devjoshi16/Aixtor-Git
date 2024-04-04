@@ -17,13 +17,13 @@
 
           <div class="form-outline mb-4">
             <input type="email" name = "<portlet:namespace/>email"
-              class="form-control form-control-lg"
+              class="form-control form-control-lg" value="${username}" autocomplete="off"
               placeholder="Email" />
           </div>
 
           <div class="form-outline mb-3">
             <input type="password" name = "<portlet:namespace/>password" 
-            class="form-control form-control-lg"
+            class="form-control form-control-lg" value="${password}" autocomplete="off"
               placeholder="Password" />
           </div>
 
@@ -39,6 +39,7 @@
           </div>
 
           <div class="text-center text-lg-start mt-4 pt-2">
+          <p class="text-danger">${error}</p>
             <button type="submit" class="btn btn-primary btn-lg"
               style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
             <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="http://localhost:8080/home?p_p_id=com_liferay_login_web_portlet_LoginPortlet&p_p_lifecycle=0&p_p_state=maximized&p_p_mode=view&_com_liferay_login_web_portlet_LoginPortlet_mvcRenderCommandName=%2Flogin%2Fcreate_account&saveLastPath=false"

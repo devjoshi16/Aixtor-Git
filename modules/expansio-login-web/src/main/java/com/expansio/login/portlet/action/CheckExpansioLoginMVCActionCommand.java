@@ -5,11 +5,13 @@ import com.liferay.portal.kernel.model.CompanyConstants;
 import com.liferay.portal.kernel.portlet.bridges.mvc.BaseMVCActionCommand;
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCActionCommand;
 import com.liferay.portal.kernel.security.auth.session.AuthenticatedSessionManagerUtil;
+import com.liferay.portal.kernel.servlet.SessionErrors;
 import com.liferay.portal.kernel.util.ParamUtil;
 import com.liferay.portal.kernel.util.PortalUtil;
 
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
+import javax.portlet.ResourceResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -20,7 +22,7 @@ import org.osgi.service.component.annotations.Component;
 	    property = {
 	        "javax.portlet.name=" + ExpansioLoginPortletKeys.EXPANSIOLOGIN,
 	        "mvc.command.name=/login"
-	    },
+		},
 	    service = MVCActionCommand.class
 	)
 
@@ -35,10 +37,12 @@ public class CheckExpansioLoginMVCActionCommand  extends BaseMVCActionCommand {
 		String userPassword = ParamUtil.getString(actionRequest, "password");
 		try {
 			AuthenticatedSessionManagerUtil.login(request, response, userEmail, userPassword, false, CompanyConstants.AUTH_TYPE_EA);		
-			actionResponse.sendRedirect("http://localhost:8080/");
+			actionResponse.sendRedirect("http://localhost:8080/web/expensio/");
 		}catch(Exception e)
 		{
-			actionResponse.sendRedirect("http://localhost:8080/login/");			
+			actionRequest.setAttribute("error", "User or Password incorrect!");
+			actionRequest.setAttribute("username", userEmail);
+			actionRequest.setAttribute("password", userPassword);
 		}
 		
 	}
