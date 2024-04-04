@@ -1,6 +1,7 @@
 package com.expensio.department.portlet.action;
 import com.expensio.common.data.model.Departments;
 import com.expensio.common.data.service.DepartmentsLocalService;
+import com.expensio.department.constants.ExpensioDepartmentPortletConstants;
 import com.expensio.department.constants.ExpensioDepartmentPortletKeys;
 import com.liferay.counter.kernel.service.CounterLocalService;
 import com.liferay.counter.kernel.service.CounterLocalServiceUtil;
@@ -48,7 +49,7 @@ public class ExpensioDepartmentMVCAction implements MVCActionCommand {
         department.setCreateDate(new Date());
         department.setModifiedDate(new Date());
 
-        String departmentName = ParamUtil.getString(actionRequest, "departmentName");
+        String departmentName = ParamUtil.getString(actionRequest, ExpensioDepartmentPortletConstants.DEPARTMENT_NAME);
         department.setDepartmentName(departmentName);
         departmentsLocalService.addDepartments(department);
         return false;

@@ -2,6 +2,7 @@ package com.expensio.department.portlet.action;
 
 import com.expensio.common.data.model.Departments;
 import com.expensio.common.data.service.DepartmentsLocalService;
+import com.expensio.department.constants.ExpensioDepartmentPortletConstants;
 import com.expensio.department.constants.ExpensioDepartmentPortletKeys;
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
@@ -35,8 +36,8 @@ public class ExpensioDepartmentMVCRender implements MVCRenderCommand {
     public String render(RenderRequest renderRequest, RenderResponse renderResponse) throws PortletException {
 
         List<Departments> departmentsList = departmentsLocalService.getDepartmentses(-1,-1);
-        renderRequest.setAttribute("departments", departmentsList);
-        return "/html/view_departments.jsp";
+        renderRequest.setAttribute(ExpensioDepartmentPortletConstants.DEPARTMENT_NAME, departmentsList);
+        return ExpensioDepartmentPortletConstants.VIEW_DEPARTMENT_JSP;
 
     }
 }

@@ -4,6 +4,7 @@ package com.expensio.designation.portlet.action;
 import com.expensio.common.data.model.Designations;
 import com.expensio.common.data.service.DepartmentsLocalService;
 import com.expensio.common.data.service.DesignationsLocalService;
+import com.expensio.designation.constants.ExpensioDesignationPortletConstants;
 import com.expensio.designation.constants.ExpensioDesignationPortletKeys;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.log.Log;
@@ -52,9 +53,9 @@ public class ExpensioDesignationMVCRender implements MVCRenderCommand {
                 throw new RuntimeException(e);
             }
         }
-        renderRequest.setAttribute("designations", designationList);
-        renderRequest.setAttribute("departments", departmentList);
-        return "/html/view_designations.jsp";
+        renderRequest.setAttribute(ExpensioDesignationPortletConstants.DESIGNATIONS, designationList);
+        renderRequest.setAttribute(ExpensioDesignationPortletConstants.DEPARTMENTS, departmentList);
+        return ExpensioDesignationPortletConstants.VIEW_DESIGNATION_JSP;
 
     }
 }

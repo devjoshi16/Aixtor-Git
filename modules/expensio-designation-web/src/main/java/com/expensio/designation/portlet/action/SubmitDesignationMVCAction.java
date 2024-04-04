@@ -2,6 +2,7 @@ package com.expensio.designation.portlet.action;
 
 import com.expensio.common.data.model.Designations;
 import com.expensio.common.data.service.DesignationsLocalService;
+import com.expensio.designation.constants.ExpensioDesignationPortletConstants;
 import com.expensio.designation.constants.ExpensioDesignationPortletKeys;
 import com.liferay.counter.kernel.service.CounterLocalServiceUtil;
 import com.liferay.portal.kernel.log.Log;
@@ -39,8 +40,8 @@ public class SubmitDesignationMVCAction implements MVCActionCommand {
 
         Designations designation = designationsLocalService.createDesignations(CounterLocalServiceUtil.increment(Designations.class.getName()));
 
-        String designationName = ParamUtil.getString(actionRequest, "designationName");
-        Long departmentId = ParamUtil.getLong(actionRequest, "departmentName");
+        String designationName = ParamUtil.getString(actionRequest, ExpensioDesignationPortletConstants.DESIGNATION_NAME);
+        Long departmentId = ParamUtil.getLong(actionRequest, ExpensioDesignationPortletConstants.DEPARTMENT_NAME);
         ThemeDisplay themeDisplay = (ThemeDisplay) actionRequest.getAttribute(WebKeys.THEME_DISPLAY);
         designation.setCompanyId(themeDisplay.getCompanyId());
         designation.setUserId(themeDisplay.getUserId());

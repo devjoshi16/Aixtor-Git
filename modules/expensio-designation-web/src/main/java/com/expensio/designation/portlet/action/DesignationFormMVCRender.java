@@ -5,6 +5,7 @@ import com.expensio.common.data.model.Departments;
 import com.expensio.common.data.model.Designations;
 import com.expensio.common.data.service.DepartmentsLocalService;
 import com.expensio.common.data.service.DesignationsLocalService;
+import com.expensio.designation.constants.ExpensioDesignationPortletConstants;
 import com.expensio.designation.constants.ExpensioDesignationPortletKeys;
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
@@ -34,8 +35,8 @@ public class DesignationFormMVCRender implements MVCRenderCommand {
     @Override
     public String render(RenderRequest renderRequest, RenderResponse renderResponse) throws PortletException {
         List<Departments> departmentsList = departmentsLocalService.getDepartmentses(-1,-1);
-        renderRequest.setAttribute("departmentList", departmentsList);
-        return "/html/add_designation.jsp";
+        renderRequest.setAttribute(ExpensioDesignationPortletConstants.DEPARTMENT_LIST, departmentsList);
+        return ExpensioDesignationPortletConstants.ADD_DESIGNATION_JSP;
 
     }
 }
