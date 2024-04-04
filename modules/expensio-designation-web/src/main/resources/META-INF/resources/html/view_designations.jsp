@@ -21,7 +21,7 @@
 
             <td> ${designation.designationId}</td>
             <td> ${designation.designationName}</td>
-            <td> ${designation.departmentId}</td>
+            <td> ${departments.get(s.index)}</td>
             <td> ${designation.createDate}</td>
 
             </tr>
